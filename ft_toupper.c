@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 15:10:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/15 19:05:18 by nde-sant         ###   ########.fr       */
+/*   Created: 2025/07/15 18:52:23 by nde-sant          #+#    #+#             */
+/*   Updated: 2025/07/15 19:04:38 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+int	ft_isalpha(int c);
 
-int				ft_isalpha(int c);
-int				ft_isdigit(int c);
-int				ft_isalnum(int c);
-int				ft_isascii(int c);
-int				ft_isprint(int c);
-unsigned int	ft_strlen(char *str);
-void			*ft_memset(void *ptr, int c, unsigned int n);
-void			ft_bzero(void *ptr, unsigned int n);
-int				ft_toupper(int c);
+static int	ft_islower(int c)
+{
+	return (c >= 97 && c <= 122);
+}
 
-#endif
+int	ft_toupper(int c)
+{
+	if (ft_isalpha(c) == 0)
+		return (c);
+	else if (ft_islower(c) == 0)
+		return (c);
+	return (c + 32);
+}
