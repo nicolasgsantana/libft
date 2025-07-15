@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 11:01:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/15 11:03:10 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/15 12:48:42 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int	count;
+	unsigned int	count;
 
 	count = 0;
 	while (str[count] != '\0')
