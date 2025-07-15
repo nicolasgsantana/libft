@@ -1,0 +1,9 @@
+# Test Files
+tests/
+
+# Compiled Files
+*.a
+*.o
+*.out
+
+main.c
