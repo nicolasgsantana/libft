@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 15:10:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/15 13:51:09 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:57:41 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 unsigned int	ft_strlen(char *str);
-void			*ft_memset(void *ptr, int c, unsigned int n)
+void			*ft_memset(void *ptr, int c, unsigned int n);
 
 #endif
