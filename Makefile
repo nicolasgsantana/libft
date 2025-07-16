@@ -6,7 +6,7 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME): $(HEADER)
+$(NAME): $(HEADER) $(SRC)
 	$(CC) $(FLAGS) -c $(SRC)
 	ar r $(NAME) *.o
 
