@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:40:07 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/16 10:54:48 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/16 11:30:05 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		d[i] = src[i];
+		d[i] = s[i];
 		i++;
 	}
 	return (dest);
