@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 15:10:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/16 10:22:43 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:34:17 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
-unsigned int	ft_strlen(char *str);
-void			*ft_memset(void *ptr, int c, unsigned int n);
-void			ft_bzero(void *ptr, unsigned int n);
+size_t			ft_strlen(char *str);
+void			*ft_memset(void *ptr, int c, size_t n);
+void			ft_bzero(void *ptr, size_t n);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 

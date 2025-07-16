@@ -6,13 +6,15 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 11:01:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/15 12:48:42 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:28:33 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(char *str)
 {
-	unsigned int	count;
+	size_t	count;
 
 	count = 0;
 	while (str[count] != '\0')
