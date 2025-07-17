@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 17:49:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/17 18:29:33 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:02:04 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != c && s[i] != '\0')
 		i++;
 	if (s[i] == c)
-		return (&s[i]);
+		return ((char *)&s[i]);
 	else
-		return (NULL);
+		return (0);
 }
