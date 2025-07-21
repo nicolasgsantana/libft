@@ -4,7 +4,7 @@ SRC = ft_*.c
 HEADER = libft.h
 CC = gcc
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME): $(HEADER) $(SRC)
 	$(CC) $(FLAGS) -c $(SRC)
@@ -13,7 +13,8 @@ $(NAME): $(HEADER) $(SRC)
 clean:
 	rm -f *.o
 
-fclean: clean
+fclean:
+	rm -f *.o
 	rm -f $(NAME)
 
 re: fclean all
