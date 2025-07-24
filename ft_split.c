@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:26:28 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 13:15:05 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:12:20 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,9 @@ static int	ft_count_strings(char const *str, char delimiter)
 	
 	i = 0;
 	count = 0;
-	if(delimiter == 0)
-		return(1);
 	while (str[i])
 	{
-		if (i == 0 && str[i] == delimiter)
-		{
-			if (str[i+1]!=delimiter)
-				count++;
-			i++;
-			continue;
-		}
-		else if (str[i] == delimiter && str[i+1] != delimiter && str[i+1])
+		if (str[i] != delimiter && (str[i+1] == delimiter || !str[i+1]))
 			count++;
 		i++;
 	}
@@ -45,27 +36,27 @@ static char	*get_index_str(char const *str, char delimiter, int index)
 	int	i;
 	int	current_index;
 	int	str_len;
+	int	str_index;
 	char	*new_str;
 
-	current_index = -1;
+	current_index = 0;
 	i = 0;
 	str_len = 0;
+	str_index = -1;
 	while (str[i])
 	{
-		if (str[i] == delimiter && str[i+1] != delimiter && str[i+1])
-			current_index++;
+		if (str[i] != delimiter && current_index == index && str_index == -1)
+			str_index = i;	
 		if (str[i] != delimiter && current_index == index)
-		{
-			str_len++;
-			if (str[i+1] == delimiter || !str[i+1])
-				break;
-		}
+			str_len++;	
+		if (str[i] != delimiter && (str[i+1] == delimiter || !str[i+1]))
+			current_index++;
 		i++;
 	}
-	new_str = malloc(str_len + 1 * sizeof(char));
+	new_str = malloc((str_len + 1) * sizeof(char));
 	if(!new_str)
 		return (NULL);
-	ft_strlcpy(new_str, &str[i - str_len + 1], str_len + 1);
+	ft_strlcpy(new_str, &str[str_index], str_len + 1);
 	return (new_str);
 }
 
@@ -89,6 +80,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		array_size;
 
+	if (!s)
+		return(NULL);
 	array_size = ft_count_strings(s, c) + 1;
 	array = malloc(array_size * sizeof(char *));
 	if (!array)
