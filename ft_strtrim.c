@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:19:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 17:45:49 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 18:06:24 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 static int	ft_match_set_from_begining(const char *str, const char *set)
@@ -44,15 +44,15 @@ static int	ft_match_set_from_end(const char *str, const char *set)
 	int	j;
 
 	count = 0;
-	i = ft_strlen((char *)str) - 1;
-	j = ft_strlen((char *)set) - 1;
+	i = ft_strlen(str) - 1;
+	j = ft_strlen(set) - 1;
 	while (j >= 0 && i >= 0)
 	{
 		if (str[i] == set[j])
 		{
 			count++;
 			i--;
-			j = ft_strlen((char *)set);
+			j = ft_strlen(set);
 		}
 		j--;
 	}
@@ -68,7 +68,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start_sets = ft_match_set_from_begining(s1, set);
 	end_sets = ft_match_set_from_end(s1, set);
-	new_str_len = ft_strlen((char *)s1) - (start_sets + end_sets);
+	new_str_len = ft_strlen(s1) - (start_sets + end_sets);
 	if (new_str_len <= 0)
 		new_str_len = 1;
 	trimmed_str = malloc(new_str_len * sizeof(char));

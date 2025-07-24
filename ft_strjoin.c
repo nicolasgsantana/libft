@@ -6,14 +6,14 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:35:32 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/22 15:42:58 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 18:05:20 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -22,8 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2_len;
 	size_t	i;
 
-	s1_len = ft_strlen((char *)s1);
-	s2_len = ft_strlen((char *)s2);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
 	str = malloc((s1_len + s2_len + 1) * sizeof (char));
 	i = 0;
 	if (!str)

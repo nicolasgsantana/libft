@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 12:39:58 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 17:48:55 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 18:06:00 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	result_str = malloc(ft_strlen((char *)s) + 1 * sizeof(char));
+	result_str = malloc(ft_strlen(s) + 1 * sizeof(char));
 	if (!result_str)
 		return (NULL);
 	while (s[i])

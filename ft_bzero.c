@@ -6,15 +6,15 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:54:36 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/16 10:33:44 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:58:22 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *ptr, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 
-void	ft_bzero(void *ptr, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(ptr, 0, n);
+	ft_memset(s, 0, n);
 }

@@ -6,14 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:26:28 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 17:29:54 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 18:04:50 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t	ft_strlen(char *str);
 
 static int	ft_count_strings(char const *str, char delimiter)
 {

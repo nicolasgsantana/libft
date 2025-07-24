@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:13:46 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/22 11:15:12 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 18:05:31 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	dst_len = ft_strlen(dst);
-	src_len = ft_strlen((char *)src);
+	src_len = ft_strlen(src);
 	i = 0;
 	if (size <= dst_len)
 		return (size + src_len);

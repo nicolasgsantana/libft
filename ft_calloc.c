@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:29:55 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/22 10:45:19 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 18:03:15 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-void	ft_bzero(void *ptr, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
