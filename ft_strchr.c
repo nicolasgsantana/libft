@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 17:49:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/21 17:01:43 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:40:17 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
 	unsigned char	to_find;
 
 	to_find = c;

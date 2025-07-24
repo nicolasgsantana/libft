@@ -6,11 +6,10 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:19:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 10:08:01 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:45:49 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdlib.h>
 
 size_t	ft_strlen(char *str);
@@ -25,9 +24,9 @@ static int	ft_match_set_from_begining(const char *str, const char *set)
 	count = 0;
 	i = 0;
 	j = 0;
-	while(set[j] && str[i])
+	while (set[j] && str[i])
 	{
-		if(str[i] == set[j])
+		if (str[i] == set[j])
 		{
 			count++;
 			i++;

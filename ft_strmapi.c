@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 12:39:58 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/23 13:05:59 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:48:55 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*result_str;
 	int		i;
 
-	
 	i = 0;
 	result_str = malloc(ft_strlen((char *)s) + 1 * sizeof(char));
 	if (!result_str)
