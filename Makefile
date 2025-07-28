@@ -26,3 +26,5 @@ re: fclean all
 
 bonus: $(SRC_BONUS)
 	$(CC) $(FLAGS) -c $(SRC_BONUS)
+	ar r $(NAME) *.o
+	rm -f *.o
