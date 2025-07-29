@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:09:29 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 18:05:10 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/29 14:56:42 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strdup(const char *s)
 	char	*cpy_str;
 	int		i;
 
-	cpy_str = malloc(ft_strlen(s) * sizeof(char));
+	cpy_str = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!cpy_str)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
