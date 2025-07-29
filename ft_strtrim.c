@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:19:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/24 18:06:24 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/29 15:06:56 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start_sets = ft_match_set_from_begining(s1, set);
 	end_sets = ft_match_set_from_end(s1, set);
 	new_str_len = ft_strlen(s1) - (start_sets + end_sets);
-	if (new_str_len <= 0)
-		new_str_len = 1;
-	trimmed_str = malloc(new_str_len * sizeof(char));
+	if (new_str_len < 0)
+		new_str_len = 0;
+	trimmed_str = malloc((new_str_len + 1) * sizeof(char));
 	if (!trimmed_str)
 		return (NULL);
 	ft_strlcpy(trimmed_str, s1 + start_sets, new_str_len + 1);
