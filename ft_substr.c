@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 12:01:18 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/07/30 10:16:41 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/07/30 10:40:26 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
+	size_t	s_len;
+	size_t	new_len;
 
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+	s_len = ft_strlen(s);
+	if (start > s_len)
+		new_len = 0;
+	else
+		new_len = s_len - start;
+	if (len > new_len)
+		len = new_len;
 	i = 0;
 	substr = malloc((len + 1) * sizeof(char));
 	if (!substr)
 		return (0);
-	if (ft_strlen(s) > start)
+	while (i < len)
 	{
-		while (s[start + i] != '\0' && i < len)
-		{
-			substr[i] = s[start + i];
-			i++;
-		}
+		substr[i] = s[start + i];
+		i++;
 	}
 	substr[i] = '\0';
 	return (substr);
