@@ -27,7 +27,6 @@ clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f *.o
 	rm -f $(NAME)
 
 re: fclean all
