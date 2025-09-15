@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 15:10:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/09/15 10:04:34 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/09/15 10:52:42 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	*get_next_line(int fd);
+
+char	*ft_itohex(uintptr_t n, int is_uppercase);
+char	*ft_ptrtohex(void *ptr);
+char	*ft_uitoa(unsigned int n);
+int		ft_printf(const char *format, ...);
 
 #endif
