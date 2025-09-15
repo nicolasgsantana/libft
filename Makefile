@@ -1,32 +1,48 @@
+GREEN  = \033[1;32m
+YELLOW = \033[1;33m
+BLUE   = \033[1;34m
+CYAN   = \033[1;36m
+RESET  = \033[0m
+
 NAME = libft.a
+SRC_DIR = src
+INC_DIR = include
+OBJ_DIR = obj
 
-FLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar
+ARFLAGS = rcs
+INCLUDES = -I$(INC_DIR)
 
-SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
-ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
-ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendnl_fd.c ft_putnbr_fd.c \
-ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c \
-ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
-ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
-ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
-ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
-ft_lstnew_bonus.c ft_lstsize_bonus.c get_next_line.c ft_printf.c ft_printf_utils.c ft_uitoa.c ft_itohex.c ft_ptrtohex.c
-
-HEADER = libft.h get_next_line.h ft_printf.h
-CC = cc
-
-OBJ = $(SRC:.c=.o)
+# Source files
+SRC = $(wildcard $(SRC_DIR)/*.c)
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+HEADER = $(wildcard $(INC_DIR)/*.h)
 
 all: $(NAME)
 
-$(NAME): $(HEADER) $(OBJ)
-	$(CC) $(FLAGS) -c $(SRC)
-	ar rcs $(NAME) *.o
+$(NAME): $(OBJ)
+	@echo "$(CYAN)Creating library $(NAME)...$(RESET)"
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	@echo "$(GREEN)$(NAME) created$(RESET)"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER) | $(OBJ_DIR)
+	@echo "$(BLUE) Compiling: $(notdir $<)$(RESET)"
+	@$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_DIR):
+	@echo "$(CYAN) Creating obj directory...$(RESET)"
+	@mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -f *.o
+	@echo "$(YELLOW) Removing obj directory...$(RESET)"
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "$(YELLOW) Removing $(NAME)...$(RESET)"
+	@rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
