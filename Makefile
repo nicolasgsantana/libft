@@ -6,7 +6,7 @@ RESET  = \033[0m
 
 NAME = libft.a
 SRC_DIR = src
-INC_DIR = include
+INC_DIR = inc
 OBJ_DIR = obj
 
 CC = gcc
